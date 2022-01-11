@@ -6,7 +6,7 @@ CREATE TABLE cra_e.accounts (
   last_name_account VARCHAR(30),
   login_account VARCHAR(30),
   password_account VARCHAR(30),
-  PRIMARY KEY (accountId)
+  PRIMARY KEY (id_account)
 );
 
 CREATE TABLE cra_e.task (
@@ -35,7 +35,7 @@ CREATE TABLE cra_e.made_work (
     CONSTRAINT fkTask
         FOREIGN KEY(id_task_made_work) 
         REFERENCES cra_e.task(id_task)
-)
+);
 
 create role postgrestRole nologin;
 
