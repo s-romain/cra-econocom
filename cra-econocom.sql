@@ -9,7 +9,7 @@ CREATE TABLE cra_e.accounts (
   PRIMARY KEY (id_account)
 );
 
-CREATE TABLE cra_e.task (
+CREATE TABLE cra_e.tasks (
   id_task INT GENERATED ALWAYS AS IDENTITY,
   id_manager INT,
   id_parent_task INT,
@@ -22,7 +22,7 @@ CREATE TABLE cra_e.task (
 	  REFERENCES cra_e.accounts(id_account)
 );
 
-CREATE TABLE cra_e.made_work (
+CREATE TABLE cra_e.made_works (
     id_made_work INT GENERATED ALWAYS AS IDENTITY,
     id_account_made_work INT,
     id_task_made_work INT,
