@@ -12,6 +12,7 @@ CREATE TABLE cra_e.accounts (
 CREATE TABLE cra_e.task (
   id_task INT GENERATED ALWAYS AS IDENTITY,
   id_manager INT,
+  id_parent_task INT,
   name_task VARCHAR(30),
   duration_task INT,
   type_task VARCHAR(30),
@@ -23,11 +24,10 @@ CREATE TABLE cra_e.task (
 
 CREATE TABLE cra_e.made_work (
     id_made_work INT GENERATED ALWAYS AS IDENTITY,
-    duration_made_work INT,
-    parrent_work_made_work INT,
-    date_of_work_made_work INT,
     id_account_made_work INT,
     id_task_made_work INT,
+    duration_made_work INT,
+    date_of_work_made_work INT,
     PRIMARY KEY (id_made_work),
     CONSTRAINT fkAccount
         FOREIGN KEY(id_account_made_work) 
@@ -36,7 +36,6 @@ CREATE TABLE cra_e.made_work (
         FOREIGN KEY(id_task_made_work) 
         REFERENCES cra_e.task(id_task)
 )
-
 
 create role postgrestRole nologin;
 
