@@ -19,6 +19,8 @@ Un travail effectué peut avoir un parent, par exemple si un utilisateur à trav
 
 ## Requêtes http:
 
+Se référer à la documentation Postgrest: https://postgrest.org/
+
 Je vais détailler ici les requêtes à faire à postgrest pour récupérer les informations nécessaire au fonctionnalité de l'application.
 
 Requête pour trouver une utilisateur en fonction de son login et password:
@@ -49,8 +51,6 @@ Et ajouter un objet de ce type dans le body:
 ```
 
 Requête pour obtenir une liste des tâches:
-
-Se référer à la documentation Postgrest: https://postgrest.org/
 
 GET:
 ```HTTP
