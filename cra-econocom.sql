@@ -34,7 +34,7 @@ CREATE TABLE cra_e.made_works (
         REFERENCES cra_e.accounts(id_account),
     CONSTRAINT fkTask
         FOREIGN KEY(id_task_made_work) 
-        REFERENCES cra_e.task(id_task)
+        REFERENCES cra_e.tasks(id_task)
 );
 
 create role postgrestRole nologin;
