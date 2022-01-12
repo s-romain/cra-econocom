@@ -23,7 +23,7 @@ Se référer à la documentation Postgrest: https://postgrest.org/
 
 Je vais détailler ici les requêtes à faire à postgrest pour récupérer les informations nécessaire au fonctionnalité de l'application.
 
-Requête pour trouver une utilisateur en fonction de son login et password:
+### Requête pour trouver une utilisateur en fonction de son login et password:
 
 GET:
 ```HTTP
@@ -32,7 +32,7 @@ http://localhost:3000/accounts?login_account=eq.root&&password_account=eq.root
 Dans cet exemple l'utilisateur a pour login: root et pour password: root
 
 
-Requête pour ajouter une nouvelle tâche:
+### Requête pour ajouter une nouvelle tâche:
 
 POST:
 ```HTTP
@@ -50,14 +50,14 @@ Et ajouter un objet de ce type dans le body:
 }
 ```
 
-Requête pour obtenir une liste des tâches:
+### Requête pour obtenir une liste des tâches:
 
 GET:
 ```HTTP
 http://localhost:3000/tasks
 ```
 
-Requête pour renseigner son travail effectué:
+### Requête pour renseigner son travail effectué:
 
 POST:
 ```HTTP
@@ -75,7 +75,7 @@ Et ajouter un objet de ce type dans le body:
 ```
 
 
-Requête pour obtenir toute les tâches effectué par un utilisateur:
+### Requête pour obtenir toute les tâches effectué par un utilisateur:
 
 GET:
 ```HTTP
@@ -83,7 +83,7 @@ http://localhost:3000/made_works?id_account_made_work=eq.1
 ```
 Cet exemple fonctionne pour l'utilisateur avec l'ID 1.
 
-Requête pour obtenir une liste des utilisateurs:
+### Requête pour obtenir une liste des utilisateurs:
 
 GET:
 ```HTTP
