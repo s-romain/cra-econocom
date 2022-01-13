@@ -6,6 +6,7 @@ CREATE TABLE cra_e.accounts (
   last_name_account VARCHAR(30),
   login_account VARCHAR(30),
   password_account VARCHAR(30),
+  role_account VARCHAR(30),
   PRIMARY KEY (id_account)
 );
 
@@ -16,6 +17,7 @@ CREATE TABLE cra_e.tasks (
   name_task VARCHAR(30),
   duration_task INT,
   type_task VARCHAR(30),
+  project_name_task VARCHAR(30),
   PRIMARY KEY (id_task),
   CONSTRAINT fkAccount
       FOREIGN KEY(id_manager) 
