@@ -89,3 +89,35 @@ GET:
 ```HTTP
 http://localhost:3000/accounts
 ```
+
+## Déployer avec Docker:
+
+Dans un premier temps installer docker et docker-compose sur votre machine.
+
+Ensuite chager les images de votre docker-compose avec la commande:
+```bash
+docker-compose pull
+```
+
+Monter vos images docker: 
+```bash
+docker-compose up
+```
+
+Vous devez ensuite entrer dans votre le conteneur de la base de données pour executer le script de la base.
+
+Vous pouvez utiliser cette commande:
+```bash
+docker <containeur-id> exec -it bash
+```
+
+Connecté vous à la base avec la commande:
+```bash
+psql -d app_db -U app_user
+```
+
+Executer le script et redémarrer votre docker-compose:
+
+```bash
+docker-compose restart
+```
