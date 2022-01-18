@@ -48,3 +48,19 @@ grant all on cra_e.tasks to postgrestRole;
 
 create role authenticator noinherit login password 'root';
 grant postgrestRole to authenticator;
+
+CREATE OR REPLACE function made_work_by_account(idAccount integer) returns table as $$
+declare 
+	made_work_by_account table;
+begin
+  SELECT tasks.name_task, made_works.duration_made_work, tasks.duration_task, made_works.date_of_work_made_work
+  INTO made_work_by_account
+  FROM cra_e.made_works
+  INNER JOIN cra_e.tasks 
+    ON tasks.id_task = made_works.id_task_made_work
+  WHERE made_works.id_account_made_work = idAccount;
+
+  RETURN made_work_by_account;
+end;
+$$
+language plpgsql immutable;
