@@ -1,3 +1,4 @@
+DROP SCHEMA cra_e CASCADE;
 CREATE SCHEMA cra_e;
 
 CREATE TABLE cra_e.accounts (
