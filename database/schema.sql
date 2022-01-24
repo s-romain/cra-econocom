@@ -26,7 +26,13 @@ CREATE TABLE cra_e.tasks (
   PRIMARY KEY (id_task),
   CONSTRAINT fkAccount
       FOREIGN KEY(id_manager) 
-	  REFERENCES cra_e.accounts(id_account)
+	  REFERENCES cra_e.accounts(id_account),
+  CONSTRAINT fkParentTask
+      FOREIGN KEY(id_parent_task) 
+	  REFERENCES cra_e.tasks(id_task),
+  CONSTRAINT fkUsOs
+      FOREIGN KEY(id_us) 
+	  REFERENCES cra_e.us_os(id_us_os)
 );
 
 CREATE TABLE cra_e.us_os (
@@ -40,13 +46,11 @@ CREATE TABLE cra_e.us_os (
         REFERENCES cra_e.project_informations(id_project)
 );
 
-
-
 CREATE TABLE cra_e.weekly_reports (
     id_weekly_report INT GENERATED ALWAYS AS IDENTITY,
     id_account INT,
     id_task INT,
-    duration_weekly_report VARCHAR(30),
+    duration_weekly_report timestamp,
     state_weekly_report VARCHAR(30),
     CONSTRAINT fkAccount
         FOREIGN KEY(id_account) 
@@ -60,7 +64,7 @@ CREATE TABLE cra_e.monthly_reports (
     id_monthly_report INT GENERATED ALWAYS AS IDENTITY,
     id_account INT,
     id_task INT,
-    date_monthly_reports INT,
+    date_monthly_reports timestamp,
     CONSTRAINT fkAccount
         FOREIGN KEY(id_account) 
         REFERENCES cra_e.accounts(id_account),
