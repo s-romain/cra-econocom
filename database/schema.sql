@@ -16,6 +16,18 @@ CREATE TABLE cra_e.project_informations (
     PRIMARY KEY (id_project)
 );
 
+CREATE TABLE cra_e.us_os (
+    id_us_os INT GENERATED ALWAYS AS IDENTITY,
+    id_project_information INT,
+    us_name VARCHAR(30),
+    os_name VARCHAR(30),
+    date_of_work_made_work INT,
+    PRIMARY KEY (id_us_os),
+    CONSTRAINT fkPojectInformation
+        FOREIGN KEY(id_project_information) 
+        REFERENCES cra_e.project_informations(id_project)
+);
+
 CREATE TABLE cra_e.tasks (
   id_task INT GENERATED ALWAYS AS IDENTITY,
   id_manager INT,
@@ -34,18 +46,6 @@ CREATE TABLE cra_e.tasks (
   CONSTRAINT fkUsOs
       FOREIGN KEY(id_us) 
 	  REFERENCES cra_e.us_os(id_us_os)
-);
-
-CREATE TABLE cra_e.us_os (
-    id_us_os INT GENERATED ALWAYS AS IDENTITY,
-    id_project_information INT,
-    us_name VARCHAR(30),
-    os_name VARCHAR(30),
-    date_of_work_made_work INT,
-    PRIMARY KEY (id_us_os),
-    CONSTRAINT fkPojectInformation
-        FOREIGN KEY(id_project_information) 
-        REFERENCES cra_e.project_informations(id_project)
 );
 
 CREATE TABLE cra_e.weekly_reports (
