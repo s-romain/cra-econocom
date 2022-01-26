@@ -67,13 +67,13 @@ CREATE TABLE cra_e.weekly_reports (
 CREATE TABLE cra_e.monthly_reports (
     id_monthly_report INT GENERATED ALWAYS AS IDENTITY,
     id_account INT,
-    id_task INT,
+    id_project INT,
     date_monthly_reports timestamp,
     PRIMARY KEY (id_monthly_report),
     CONSTRAINT fkAccount
         FOREIGN KEY(id_account) 
         REFERENCES cra_e.accounts(id_account),
-    CONSTRAINT fkTask
-        FOREIGN KEY(id_task) 
-        REFERENCES cra_e.tasks(id_task)
+    CONSTRAINT fkProject
+        FOREIGN KEY(id_project) 
+        REFERENCES cra_e.project_informations(id_project)
 );
