@@ -1,22 +1,19 @@
---Fonction pour requêtea avec inner join
-CREATE OR REPLACE function cra_e.made_work_by_account(idAccount integer) 
+--Fonction pour requête avec inner join
+CREATE OR REPLACE function cra_e.weekly_report_by_account(id_account_entry integer) 
 returns table(
 	name_task varchar,
-	duration_made_work integer,
+	duration_weekly_report integer,
 	duration_task integer,
-	date_of_work_made_work integer
+	date_weekly_reports integer
 	) 
 as $$
 begin
-  return query SELECT 
-  	tasks.name_task, 
-  	made_works.duration_made_work, 
-  	tasks.duration_task, 
-  	made_works.date_of_work_made_work
-  FROM cra_e.made_works
-  INNER JOIN cra_e.tasks 
-    ON tasks.id_task = made_works.id_task_made_work
-  WHERE made_works.id_account_made_work = idAccount;
+return query 
+SELECT cra_e.tasks.name_task, cra_e.weekly_reports.duration_weekly_report, cra_e.weekly_reports.date_weekly_reports
+FROM cra_e.weekly_reports 
+INNER JOIN cra_e.tasks
+ON tasks.id_task = weekly_reports.id_task 
+WHERE weekly_reports.id_account = id_account_entry;
 end;
 $$
 language plpgsql;
