@@ -55,6 +55,7 @@ CREATE TABLE cra_e.weekly_reports (
     id_task INT,
     duration_weekly_report numeric,
     state_weekly_report VARCHAR(30),
+    date_weekly_reports timestamp,
     PRIMARY KEY (id_weekly_report),
     CONSTRAINT fkAccount
         FOREIGN KEY(id_account) 
