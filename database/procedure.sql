@@ -2,9 +2,8 @@
 CREATE OR REPLACE function cra_e.weekly_report_by_account(id_account_entry integer) 
 returns table(
 	name_task varchar,
-	duration_weekly_report integer,
-	duration_task integer,
-	date_weekly_reports integer
+	duration_weekly_report numeric,
+	date_weekly_reports timestamp
 	) 
 as $$
 begin
