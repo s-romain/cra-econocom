@@ -1,5 +1,35 @@
 # cra-econocom
 
+## Get start:
+
+## Etape 1:
+
+Installer docker et docker-compose sur votre machine, ensuite il vous faut vous placer dans le répertoir du docker-compose et executer les commandes pour télécharger et monter les image du docker-compose:
+
+```bash
+docker-compose pull
+docker-compose up
+```
+
+Une fois ces étapes effectué vous pouvez executer les différents script pour créer le schéma, les procédures et ensuite les rôle que l'on doit allouer à postgrest.
+
+Pour entrer en ligne de commande dans le conteneur il vous faut executer cette commande:
+```bash
+docker <containeur-id> exec -it bash
+```
+
+Connecté vous à la base avec la commande:
+```bash
+psql -d app_db -U app_user
+```
+
+Vous pouvez ensuite executer les scripts présents dans le dossier database de se répetoire git.
+
+Relancer le docker-compose avec la commande:
+```bash
+docker-compose restart
+```
+
 ## Projet:
 
 L'application est une application de suivis d'activité.
