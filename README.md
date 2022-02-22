@@ -2,8 +2,6 @@
 
 ## Get start:
 
-## Etape 1:
-
 Installer docker et docker-compose sur votre machine, ensuite il vous faut vous placer dans le répertoir du docker-compose et executer les commandes pour télécharger et monter les image du docker-compose:
 
 ```bash
